@@ -10,6 +10,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var binding: FragmentHomeBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         binding = FragmentHomeBinding.bind(view)
         val navController = findNavController()
         super.onViewCreated(view, savedInstanceState)
