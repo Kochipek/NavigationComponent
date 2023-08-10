@@ -1,10 +1,11 @@
-package com.kochipek.navigationlogin
+package com.kochipek.navigationlogin.ecommerce
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.kochipek.navigationlogin.R
 import com.kochipek.navigationlogin.databinding.FragmentProfileBinding
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {

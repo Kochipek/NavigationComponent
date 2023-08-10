@@ -7,16 +7,19 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.kochipek.navigationlogin.HomeFragment"
+        android:name="com.kochipek.navigationlogin.ecommerce.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_homeFragment_to_electronicsGraph"
+            app:destination="@id/electronicsGraph" />
+        <action
+            android:id="@+id/action_homeFragment_to_fashionGraph"
+            app:destination="@id/fashionGraph" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.kochipek.navigationlogin.LoginFragment"
+        android:name="com.kochipek.navigationlogin.ecommerce.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
@@ -25,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.kochipek.navigationlogin.ProfileFragment"
+        android:name="com.kochipek.navigationlogin.ecommerce.ProfileFragment"
         android:label="Welcome {username} !"
         tools:layout="@layout/fragment_profile">
         <argument
@@ -37,4 +40,79 @@
             android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.kochipek.navigationlogin.ecommerce.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/fragment_cart" />
+    <navigation
+        android:id="@+id/electronicsGraph"
+        android:label="Electronics"
+        app:startDestination="@id/electronicsFragment">
+        <fragment
+            android:id="@+id/computersFragment"
+            android:name="com.kochipek.navigationlogin.electronics.ComputersFragment"
+            android:label="Computers"
+            tools:layout="@layout/fragment_computers">
+            <action
+                android:id="@+id/action_computersFragment_to_electronicsFragment"
+                app:destination="@id/electronicsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/phonesFragment"
+            android:name="com.kochipek.navigationlogin.electronics.PhonesFragment"
+            android:label="Phones"
+            tools:layout="@layout/fragment_phones">
+            <action
+                android:id="@+id/action_phonesFragment_to_electronicsFragment"
+                app:destination="@id/electronicsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/electronicsFragment"
+            android:name="com.kochipek.navigationlogin.electronics.ElectronicsFragment"
+            android:label="Electronics"
+            tools:layout="@layout/fragment_electronics">
+            <action
+                android:id="@+id/action_electronicsFragment_to_computersFragment"
+                app:destination="@id/computersFragment" />
+            <action
+                android:id="@+id/action_electronicsFragment_to_phonesFragment"
+                app:destination="@id/phonesFragment" />
+        </fragment>
+    </navigation>
+    <navigation
+        android:id="@+id/fashionGraph"
+        android:label="Fashion"
+        app:startDestination="@id/fashionFragment">
+        <fragment
+            android:id="@+id/fashionFragment"
+            android:name="com.kochipek.navigationlogin.fashion.FashionFragment"
+            android:label="Fashion"
+            tools:layout="@layout/fragment_fashion">
+            <action
+                android:id="@+id/action_fashionFragment_to_mensClothingFragment"
+                app:destination="@id/mensClothingFragment" />
+            <action
+                android:id="@+id/action_fashionFragment_to_womensClothingFragment"
+                app:destination="@id/womensClothingFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/mensClothingFragment"
+            android:name="com.kochipek.navigationlogin.fashion.MensClothingFragment"
+            android:label="Men's Clothes"
+            tools:layout="@layout/fragment_mens_clothing">
+            <action
+                android:id="@+id/action_mensClothingFragment_to_fashionFragment"
+                app:destination="@id/fashionFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/womensClothingFragment"
+            android:name="com.kochipek.navigationlogin.fashion.WomensClothingFragment"
+            android:label="Women's Clothes"
+            tools:layout="@layout/fragment_womens_clothing">
+            <action
+                android:id="@+id/action_womensClothingFragment_to_fashionFragment"
+                app:destination="@id/fashionFragment" />
+        </fragment>
+    </navigation>
 </navigation>
